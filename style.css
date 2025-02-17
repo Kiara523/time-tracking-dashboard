@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;1,300&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: hsl(226, 43%, 10%);
+
+  --bg-profile: hsl(246, 80%, 60%);
+  --bg-display: hsl(235, 46%, 20%);
+
+  --primary-text: hsl(0, 0%, 100%);
+  --secondary-text: hsl(236, 100%, 87%);
+  --bg-active-state: hsl(235, 41%, 34%);
+  --active-state: hsl(235, 45%, 61%);
+
+  --work-bg: hsl(15, 100%, 70%);
+  --play-bg: hsl(195, 74%, 62%);
+  --study-bg: hsl(348, 100%, 68%);
+  --exercise-bg: hsl(145, 58%, 55%);
+  --social-bg: hsl(264, 64%, 52%);
+  --self-care-bg: hsl(43, 84%, 65%);
+
+  /* --large-fs: clamp(1rem, 0.9693rem + 0.1311vw, 1rem);
+  --small-fs: clamp(0.9rem, 0.7944rem + 0.4507vw, 1.2rem); */
+  --fs: 1.125 rem;
+  --ff: "Rubik", Arial, Helvetica, sans-serif;
+  --fw: light;
+
+  --b-radius: 15px;
+  --sm-screen-padding: 1.563rem;
+  --lg-screen-padding: 2.063rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  font-family: inherit;
+  color: var(--primary-text);
+}
+
+/* general styles */
+
+/* remove ul list styles */
+ul[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100svh;
+  font-size: var(--fs);
+  font-family: var(--ff);
+  font-weight: var(--fw);
+  background-color: var(--bg-color);
+  color: var(--primary-text);
+  letter-spacing: 1px;
+  margin: 2rem;
+
+  display: grid;
+  place-content: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  cursor: pointer;
+  color: var(--active-state);
+}
+
+.dashboard-display:hover,
+.dashboard-display:focus-visible {
+  background-color: var(--bg-active-state);
+  cursor: pointer;
+}
+
+/* botton actice class */
+
+.btn-active {
+  color: var(--active-state);
+}
+
+.profile__picture {
+  max-width: 60px;
+  max-height: 60px;
+  border: 3px solid white;
+  border-radius: 1000px;
+}
+
+.secondary-text {
+  /* font-size: --small-fs; */
+  font-size: 0.9rem;
+  font-weight: var(--fw);
+  color: var(--secondary-text);
+}
+
+.profile__name {
+  font-weight: var(--fw);
+}
+
+/* .card-title {
+  font-size: var(--large-fs);
+} */
+/* 
+.time-track {
+  font-size: 1.;
+} */
+
+.profile__description {
+  background-color: var(--bg-profile);
+  padding: var(--sm-screen-padding);
+
+  border-radius: var(--b-radius);
+  display: flex;
+  gap: 1rem;
+
+  position: relative;
+  z-index: 1;
+}
+
+.navigation,
+.dashboard-display {
+  background-color: var(--bg-display);
+  border-radius: var(--b-radius);
+  padding: var(--sm-screen-padding);
+}
+
+.list-item {
+  padding-top: 1rem;
+}
+
+.navigation {
+  min-height: 35%;
+  margin-top: -20px;
+  text-align: center;
+}
+
+/* Component */
+.dashboard {
+  display: grid;
+  gap: 63px;
+  margin-inline: 2rem;
+
+  line-height: 1.5;
+}
+
+.list-container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.card__activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: first baseline;
+}
+
+.activity-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-display {
+  position: relative;
+}
+
+.activity-time::before {
+  content: "";
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 93% -70%;
+  width: 19.3rem;
+  height: 5.5rem;
+  width: 100%;
+
+  position: absolute;
+  border-radius: var(--b-radius);
+  left: 0%;
+  bottom: 55%;
+
+  margin-top: 50px;
+  z-index: -1;
+}
+
+.work::before {
+  background-image: url(./images/icon-work.svg);
+  background-color: var(--work-bg);
+}
+
+.play::before {
+  background-image: url(./images/icon-play.svg);
+  background-color: var(--play-bg);
+}
+.study::before {
+  background-image: url(./images/icon-study.svg);
+  background-color: var(--study-bg);
+}
+.exercise::before {
+  background-image: url(./images/icon-exercise.svg);
+  background-color: var(--exercise-bg);
+  background-position: 93% 0%;
+}
+
+.social::before {
+  background-image: url(./images/icon-social.svg);
+  background-color: var(--social-bg);
+  background-position: 93% 110%;
+}
+.self-care::before {
+  background-image: url(./images/icon-self-care.svg);
+  background-color: var(--self-care-bg);
+}
+
+@media (width >= 650px) {
+  .dashboard {
+    min-width: 620px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "profile profile"
+      "work play"
+      "study exersice"
+      "socila self-care";
+    row-gap: 4rem;
+    column-gap: 2rem;
+  }
+
+  .profile {
+    grid-area: profile;
+  }
+
+  .profile__description {
+    gap: 4rem;
+  }
+
+  .profile__name {
+    font-size: 2rem;
+  }
+}
+
+@media (width >= 976px) {
+  .dashboard {
+    max-width: 1100px;
+    /* grid-template-columns: repeat(4, minmax(auto, 255px)); */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "profile work play study"
+      "profile exercise socail self-care";
+
+    gap: 2rem;
+  }
+
+  .profile__description {
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  .time-track {
+    font-size: 3.5rem;
+  }
+
+  .list-container {
+    grid-template-columns: 1fr;
+    text-align: start;
+  }
+  .profile {
+    grid-area: profile;
+  }
+
+  .activity-time {
+    flex-direction: column;
+    align-items: start;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+  }
+
+  .dashboard-display {
+    align-self: end;
+    padding: var(--lg-screen-padding);
+  }
+
+  .activity-time::before {
+    left: 0%;
+    bottom: 72%;
+
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="arthur" content="Chiara Rinzivillo" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="main.js"></script>
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+
+  <body>
+    <article class="dashboard">
+      <section class="profile">
+        <div class="profile__description">
+          <img
+            class="profile__picture"
+            src="images/image-jeremy.png"
+            alt="profile picture"
+            title="profile picture"
+            width="234"
+            height="234"
+          />
+          <div>
+            <h1 class="secondary-text">Report for</h1>
+            <h2 class="profile__name">Jeremy Robson</h2>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <ul role="list" class="list-container">
+            <li class="list-item">
+              <button class="btn" id="daily">Daily</button>
+            </li>
+            <li class="list-item">
+              <button class="btn" id="weekly">Weekly</button>
+            </li>
+            <li class="list-item">
+              <button class="btn" id="monthly">Monthly</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="dashboard-display">
+        <div class="card__activity">
+          <h2 class="card-title">Work</h2>
+          <img
+            class="icon-ellipsis"
+            src="images/icon-ellipsis.svg"
+            alt="navigation-manu"
+            title="navigation-manu"
+          />
+        </div>
+
+        <div class="activity-time work">
+          <p class="time-track"></p>
+          <p class="secondary-text previous"></p>
+        </div>
+      </section>
+
+      <section class="dashboard-display">
+        <div class="card__activity">
+          <h2 class="card-title">Play</h2>
+          <img
+            src="images/icon-ellipsis.svg"
+            alt="navigation-manu"
+            title="navigation-manu"
+          />
+        </div>
+
+        <div class="activity-time play">
+          <p class="time-track"></p>
+          <p class="secondary-text previous"></p>
+        </div>
+      </section>
+
+      <section class="dashboard-display">
+        <div class="card__activity">
+          <h2 class="card-title">Study</h2>
+          <img
+            src="images/icon-ellipsis.svg"
+            alt="navigation-manu"
+            title="navigation-manu"
+          />
+        </div>
+
+        <div class="activity-time study">
+          <p class="time-track"></p>
+          <p class="secondary-text previous"></p>
+        </div>
+      </section>
+
+      <section class="dashboard-display">
+        <div class="card__activity">
+          <h2 class="card-title">Exercise</h2>
+          <img
+            src="images/icon-ellipsis.svg"
+            alt="navigation-manu"
+            title="navigation-manu"
+          />
+        </div>
+
+        <div class="activity-time exercise">
+          <p class="time-track"></p>
+          <p class="secondary-text previous"></p>
+        </div>
+      </section>
+
+      <section class="dashboard-display">
+        <div class="card__activity">
+          <h2 class="card-title">Social</h2>
+          <img
+            src="images/icon-ellipsis.svg"
+            alt="navigation-manu"
+            title="navigation-manu"
+          />
+        </div>
+
+        <div class="activity-time social">
+          <p class="time-track"></p>
+          <p class="secondary-text previous"></p>
+        </div>
+      </section>
+
+      <section class="dashboard-display self-care">
+        <div class="card__activity">
+          <h2 class="card-title">Self Care</h2>
+          <img
+            src="images/icon-ellipsis.svg"
+            alt="navigation-manu"
+            title="navigation-manu"
+          />
+        </div>
+
+        <div class="activity-time self-care">
+          <p class="time-track"></p>
+          <p class="secondary-text previous"></p>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
