@@ -26,8 +26,6 @@
   --social-bg: hsl(264, 64%, 52%);
   --self-care-bg: hsl(43, 84%, 65%);
 
-  /* --large-fs: clamp(1rem, 0.9693rem + 0.1311vw, 1rem);
-  --small-fs: clamp(0.9rem, 0.7944rem + 0.4507vw, 1.2rem); */
   --fs: 1.125 rem;
   --ff: "Rubik", Arial, Helvetica, sans-serif;
   --fw: light;
@@ -70,6 +68,10 @@ body {
   place-content: center;
 }
 
+.hidden-header {
+  display: none;
+}
+
 .btn {
   background-color: transparent;
   border: none;
@@ -101,7 +103,6 @@ body {
 }
 
 .secondary-text {
-  /* font-size: --small-fs; */
   font-size: 0.9rem;
   font-weight: var(--fw);
   color: var(--secondary-text);
@@ -110,14 +111,6 @@ body {
 .profile__name {
   font-weight: var(--fw);
 }
-
-/* .card-title {
-  font-size: var(--large-fs);
-} */
-/* 
-.time-track {
-  font-size: 1.;
-} */
 
 .profile__description {
   background-color: var(--bg-profile);
@@ -236,7 +229,7 @@ body {
       "profile profile"
       "work play"
       "study exersice"
-      "socila self-care";
+      "social self-care";
     row-gap: 4rem;
     column-gap: 2rem;
   }
@@ -257,7 +250,6 @@ body {
 @media (width >= 976px) {
   .dashboard {
     max-width: 1100px;
-    /* grid-template-columns: repeat(4, minmax(auto, 255px)); */
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "profile work play study"

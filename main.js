@@ -44,9 +44,16 @@ const setEventListeners = (data) => {
 
 // fecth data from json file
 const fecthAllReports = async () => {
-  const response = await fetch("./data.json");
-  const jsonData = await response.json();
-  return jsonData;
+  try {
+    const response = await fetch("./data.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const jsonData = await response.json();
+    return jsonData;
+  } catch (error) {
+    alert("Failed to load data. Please try again later.");
+  }
 };
 
 // change the paragraph text to display selected data
